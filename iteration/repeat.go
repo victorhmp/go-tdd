@@ -2,14 +2,11 @@
 
 package iteration
 
+import "strings"
+
 func Repeat(character string, count int) string {
-	var repeated string
-
-	for i := 0; i < count; i++ {
-		repeated += character
-	}
-
-	return repeated
+	// https://pkg.go.dev/strings#Repeat
+	return strings.Repeat(character, count)
 }
 
 // Some iteration examples from https://gobyexample.com

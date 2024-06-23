@@ -6,8 +6,8 @@ import "testing"
 // - the test file has to end in `_test.go`
 // - the test function only takes the one argument below
 func TestHello(t *testing.T) {
-	got := Hello()
-	want := "Hello, World!"
+	got := Hello("Victor")
+	want := "Hello, Victor"
 
 	if got != want {
 		// `%q` wraps the value you're printing in double quotes

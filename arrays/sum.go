@@ -1,4 +1,4 @@
-package main
+package arrays
 
 // Important to notice that arrays in Go have fixed length, and that length is
 // fixed to its type declaration. So a function that expects [5]int will NOT
@@ -38,7 +38,6 @@ func SumAllTails(numbersToSum ...[]int) []int {
 			// Slicing like Python!
 			tail := numbers[1:]
 			sums = append(sums, Sum(tail))
-
 		}
 	}
 

@@ -15,6 +15,36 @@ func Sum(numbers []int) int {
 	return sum
 }
 
+func SumAll(slicesToSum ...[]int) []int {
+	var sums []int
+
+	for _, numbers := range slicesToSum {
+		// append() is a safe way to add an element into a slice, since just accessing
+		// a random index inside of it might result in runtime errors.
+		// Important to notice that append returns a new slice.
+		sums = append(sums, Sum(numbers))
+	}
+
+	return sums
+}
+
+func SumAllTails(numbersToSum ...[]int) []int {
+	var sums []int
+
+	for _, numbers := range numbersToSum {
+		if len(numbers) == 0 {
+			sums = append(sums, 0)
+		} else {
+			// Slicing like Python!
+			tail := numbers[1:]
+			sums = append(sums, Sum(tail))
+
+		}
+	}
+
+	return sums
+}
+
 // From the docs:
 // Arrays are useful when planning the detailed layout of memory and sometimes can help avoid allocation [...]
 //

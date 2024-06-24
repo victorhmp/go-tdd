@@ -2,20 +2,34 @@ package structs
 
 import "testing"
 
-func TestRectPerimeter(t *testing.T) {
-	got := RectPerimeter(10.0, 10.0)
+func TestPerimeter(t *testing.T) {
+	rectangle := Rectangle{10.0, 10.0}
+	got := Perimeter(rectangle)
 	expected := 40.0
 
 	if got != expected {
-		t.Errorf("got %.2f expected %.2f", got, expected)
+		t.Errorf("got %g expected %g", got, expected)
 	}
 }
 
-func TestRectArea(t *testing.T) {
-  got := RectArea(12.0, 6.0)
-	expected := 72.0
+func TestArea(t *testing.T) {
+	t.Run("rectangles", func(t *testing.T) {
+		rectangle := Rectangle{12, 6}
+		got := rectangle.Area()
+		expected := 72.0
 
-	if got != expected {
-		t.Errorf("got %.2f expected %.2f", got, expected)
-	}
+		if got != expected {
+			t.Errorf("got %.2f expected %.2f", got, expected)
+		}
+	})
+
+	t.Run("circles", func(t *testing.T) {
+		circle := Circle{10}
+		got := circle.Area()
+		expected := 314.1592653589793
+
+		if got != expected {
+			t.Errorf("got %g expected %g", got, expected)
+		}
+	})
 }

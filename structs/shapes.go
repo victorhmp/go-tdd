@@ -2,6 +2,16 @@ package structs
 
 import "math"
 
+// Very important to notice here that we're not telling Go that Rectangle or
+// Circle implement this interface. They both have a method called `Area` that
+// has the exact same signature and returns the same float64 we're declaring here.
+// So Go will infer that they are Shapes.
+// "In Go interface resolution is implicit. If the type you pass in matches what the interface is asking for, it will compile."
+// That's why our tests also work!
+type Shape interface {
+	Area() float64
+}
+
 type Rectangle struct {
 	Width  float64
 	Height float64

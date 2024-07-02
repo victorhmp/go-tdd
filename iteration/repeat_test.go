@@ -29,5 +29,5 @@ func ExampleRepeat() {
 	characterToRepeat := "e"
 
 	fmt.Println(Repeat(characterToRepeat, repeatCount))
-	// Output: "eeeee"
+	// Output: eeeee
 }

@@ -3,9 +3,9 @@ package maps
 import "testing"
 
 func TestSearch(t *testing.T) {
-	dict := map[string]string{"test": "this is just a test"}
+	dictionary := Dictionary{"test": "this is just a test"}
 
-	got := Search(dict, "test")
+	got := dictionary.Search("test")
 	expected := "this is just a test"
 
 	assertStrings(t, got, expected)

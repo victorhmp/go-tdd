@@ -55,6 +55,10 @@ func (d Dictionary) Update(word, newDefinition string) error {
 	return nil
 }
 
+func (d Dictionary) Delete(word string) {
+	delete(d, word)
+}
+
 // Important to note about Maps: they are NOT reference types. A map value is a
 // reference to a runtime hash table. So when you pass a map to a function, you
 // are copying it, but just the **pointer**, not the underlying data.
